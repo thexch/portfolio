@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #1a1a1a; /* Couleur de fond sombre mais pas trop */
+  --foreground: #e0e0e0; /* Couleur de texte claire mais pas trop */
+  --primary: #1d4ed8;    /* Couleur primaire */
+  --secondary: #fbbf24;  /* Couleur secondaire */
+  --accent: #dc2626;     /* Couleur d'accentuation */
+  --navbar-background: #3a3a3a; /* Couleur de fond pour la navbar */
+}
+
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}

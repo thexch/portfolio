@@ -1,101 +1,167 @@
-import Image from "next/image";
+'use client';
+import Head from "next/head";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import EmblaCarousel from './js/EmblaCarousel'
+import './css/embla.css'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [selectedProject, setSelectedProject] = useState(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  const projects = [
+    {
+      title: "Création d'un site de réservation en ligne pour un restaurant",
+      image: "", // Chemin d'image vide
+      description: "BLABLABLABLABLA TEST TEST TEST",
+      images: ["", ""], // Chemins d'images vides
+    },
+    {
+      title: "Création d'un site vitrine portfolio",
+      image: "", // Chemin d'image vide
+      description: "BLABLABLABLABLA TEST TEST TEST",
+      images: ["", ""], // Chemins d'images vides
+    },
+    {
+      title: "Création d'une application dekstop",
+      image: "", // Chemin d'image vide
+      description: "BLABLABLABLABLA TEST TEST TEST",
+      images: ["", ""], // Chemins d'images vides
+    },
+    {
+      title: "Projet 4",
+      image: "", // Chemin d'image vide
+      description: "BLABLABLABLABLA TEST TEST TEST",
+      images: ["", ""], // Chemins d'images vides
+    },
+  ];
+
+  const slides = projects.map((project, index) => ({
+    key: `slide-${index}`,
+    title: project.title,
+    description: project.description,
+    images: project.images,
+  }));
+
+  return (
+    <div className="dark">
+      <Head>
+        <title>Portfolio | CHECLER Théo</title>
+        <meta name="description" content="Portfolio" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      {/* Navbar */}
+      <header className="fixed top-0 left-0 w-full bg-navbar-background shadow z-50 backdrop-blur-md bg-opacity-50">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-foreground">Théo CHECLER</h1>
+          <ul className="flex space-x-6">
+            <li><a href="#about" className="hover:text-primary text-foreground">À propos</a></li>
+            <li><a href="#projects" className="hover:text-primary text-foreground">Mes projets</a></li>
+            <li><a href="#skills" className="hover:text-primary text-foreground">Compétences</a></li>
+            <li><a href="#tech-watch" className="hover:text-primary text-foreground">Veille technologique</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Sections */}
+      <main className="pt-20">
+        {/* About Section */}
+        <section id="about" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
+          <div className="container mx-auto flex items-center">
+            <img src="/images/avatar.png" alt="Avatar" className="w-32 h-32 rounded-full mb-4" />
+            <div className="flex flex-col mx-4">
+              <p className="text-foreground mb-4">
+                Je suis un étudiant en BTS SIO passionné par le développement web et logiciel. Bienvenue sur mon portfolio !
+              </p>
+              <div className="flex space-x-4 mt-auto">
+                <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded w-32">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
+                  </svg>
+                  <a href="/path/to/cv.pdf" className="text-white">Mon CV</a>
+                </button>
+                <button className="flex items-center bg-blue-600 text-white px-4 py-2 rounded w-32">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.38-.02-3.16-1.93-3.16-1.93 0-2.23 1.51-2.23 3.06v5.6h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z" />
+                  </svg>
+                  <a href="https://www.linkedin.com/in/monprofil" className="text-white">LinkedIn</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Mes projets</h2>
+            <EmblaCarousel slides={slides} options={{ loop: true }} onSelectProject={setSelectedProject} />
+          </div>
+        </section>
+
+        {/* Exp Section */}
+        <section id="exp" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Expériences professionnels</h2>
+            <p className="text-foreground">[Liste de vos exp pro]</p>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Compétences</h2>
+            <p className="text-foreground">[Liste de vos compétences ici]</p>
+          </div>
+        </section>
+
+        {/* Tech Watch Section */}
+        <section id="tech-watch" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
+          <div className="container mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Veille technologique</h2>
+            <p className="text-foreground">[Détails de votre veille technologique ici]</p>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+      {/* Project Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-background p-8 rounded shadow-lg max-w-lg w-full relative text-foreground"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-2xl font-bold mb-4">{selectedProject.title}</h3>
+              <div className="flex space-x-4 overflow-x-auto">
+                {selectedProject.images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image || "/path/to/placeholder.jpg"}
+                    alt={`${selectedProject.title} ${index + 1}`}
+                    className="w-32 h-32 object-cover rounded"
+                  />
+                ))}
+              </div>
+              <p className="mt-4">{selectedProject.description}</p>
+              <button
+                className="mt-4 bg-primary text-white px-4 py-2 rounded"
+                onClick={() => setSelectedProject(null)}
+              >
+                Fermer
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
