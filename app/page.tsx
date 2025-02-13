@@ -5,10 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import EmblaCarousel from './js/EmblaCarousel'
 import './css/embla.css'
 
-export default function Home() {
-  const [selectedProject, setSelectedProject] = useState(null);
+interface Project {
+  title: string;
+  image: string;
+  description: string;
+  images: string[];
+}
 
-  const projects = [
+export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const projects: Project[] = [
     {
       title: "Création d'un site de réservation en ligne pour un restaurant",
       image: "", // Chemin d'image vide
