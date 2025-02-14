@@ -3,8 +3,8 @@ import Head from "next/head";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import EmblaCarousel from './js/EmblaCarousel';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
+import Lightbox from 'yet-another-react-lightbox';
+import 'yet-another-react-lightbox/styles.css';
 import './css/embla.css';
 
 interface Project {
@@ -305,16 +305,14 @@ export default function Home() {
       {/* Lightbox */}
       {lightboxOpen && selectedProject && (
         <Lightbox
-          mainSrc={selectedProject.images[lightboxIndex]}
-          nextSrc={selectedProject.images[(lightboxIndex + 1) % selectedProject.images.length]}
-          prevSrc={selectedProject.images[(lightboxIndex + selectedProject.images.length - 1) % selectedProject.images.length]}
-          onCloseRequest={() => setLightboxOpen(false)}
-          onMovePrevRequest={() =>
-            setLightboxIndex((lightboxIndex + selectedProject.images.length - 1) % selectedProject.images.length)
-          }
-          onMoveNextRequest={() =>
-            setLightboxIndex((lightboxIndex + 1) % selectedProject.images.length)
-          }
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          index={lightboxIndex}
+          slides={selectedProject.images.map(src => ({ src }))}
+          render={{
+            buttonPrev: () => null,
+            buttonNext: () => null,
+          }}
         />
       )}
     </div>

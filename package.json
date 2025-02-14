@@ -16,7 +16,7 @@
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-image-lightbox": "^5.1.4"
+    "yet-another-react-lightbox": "^3.21.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
