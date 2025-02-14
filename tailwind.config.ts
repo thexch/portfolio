@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'primary-dark': '#d97706', // Version plus foncée de votre couleur primary
+
       },
     },
   },

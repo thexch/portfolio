@@ -27,14 +27,16 @@ const EmblaCarousel = (props) => {
           {slides.map((slide) => (
             <div className="embla__slide" key={slide.key}>
               <div className="embla__slide__content">
-                <h3>{slide.title}</h3>
-                <p>{slide.description}</p>
-                <button
-                  className="mt-4 bg-primary text-white px-4 py-2 rounded"
-                  onClick={() => onSelectProject(slide)}
-                >
-                  Détails
-                </button>
+                <img src={slide.images[0]} alt={slide.title} className="w-full h-auto" />
+                <div className="embla__slide__info">
+                  <h3 className="embla__slide__title">{slide.title}</h3>
+                  <button
+                    className="mt-2 bg-primary text-white px-4 py-2 rounded"
+                    onClick={() => onSelectProject(slide)}
+                  >
+                    Détails
+                  </button>
+                </div>
               </div>
             </div>
           ))}
