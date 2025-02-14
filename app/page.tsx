@@ -133,9 +133,9 @@ export default function Home() {
         <section id="exp" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
           <div className="container mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4 text-foreground">Expériences professionnelles</h2>
-            <p className="text-foreground mb-8">
-              Durant mon alternance à la Caisse d'Epargne de Bourgogne Franche Comté (CEBFC), j'ai eu l'opportunité de travailler sur divers projets et missions, validant ainsi plusieurs compétences requises pour le BTS SIO.
-            </p>
+            <div className="text-foreground mb-8">
+              Durant mon alternance à la Caisse d&apos;Epargne de Bourgogne Franche Comté (CEBFC), j&apos;ai eu l&apos;opportunité de travailler sur divers projets et missions, validant ainsi plusieurs compétences requises pour le BTS SIO.
+            </div>
             <div className="text-left space-y-8">
               <div className="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
                 <h3 className="text-2xl font-semibold text-foreground mb-2">Configuration & Déploiement</h3>
@@ -168,7 +168,7 @@ export default function Home() {
               <div className="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
                 <h3 className="text-2xl font-semibold text-foreground mb-2">Projet</h3>
                 <p className="text-foreground mb-2">
-                  Mise en place de la biométrie pour l'authentification sur ordinateur de tous les utilisateurs de la Caisse d'Epargne de Bourgogne Franche Comté.
+                  Mise en place de la biométrie pour l&apos;authentification sur ordinateur de tous les utilisateurs de la Caisse d&apos;Epargne de Bourgogne Franche Comté.
                 </p>
                 <p className="text-sm text-gray-400 font-mono">Compétences validées : Travailler en mode projet</p>
               </div>
@@ -180,7 +180,7 @@ export default function Home() {
         <section id="tech-watch" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold mb-8 text-foreground text-center">Veille technologique</h2>
-            <h3 className="text-2xl font-semibold mb-6 text-primary">L'Intelligence Artificielle en 2024</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-primary">L&apos;Intelligence Artificielle en 2024</h3>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-gray-800 p-6 rounded-lg shadow-md">
@@ -204,14 +204,14 @@ export default function Home() {
                     <img src="/images/fleche.webp" alt="Sora Icon" className="w-6 h-6 mt-1" />
                     <div>
                       <span className="font-semibold text-primary">IA générative</span>
-                      <p className="text-gray-300">Création d'images et contenus multimédia (Sora, Midjourney)</p>
+                      <p className="text-gray-300">Création d&apos;images et contenus multimédia (Sora, Midjourney)</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gray-800 p-6 rounded-lg shadow-md">
-                <h4 className="text-xl font-semibold mb-4 text-foreground">Focus sur l'AI Act</h4>
+                <h4 className="text-xl font-semibold mb-4 text-foreground">Focus sur l&apos;AI Act</h4>
                 <div className="space-y-4">
                   <p className="text-gray-300">
                     Réglementation européenne entrée en vigueur le 1er août 2024, classifiant les IA selon leurs risques :
@@ -243,7 +243,7 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <p className="text-gray-300 mb-4">
-                    Système de surveillance et d'évaluation des comportements citoyens utilisant l'IA pour :
+                    Système de surveillance et d&apos;évaluation des comportements citoyens utilisant l&apos;IA pour :
                   </p>
                   <ul className="space-y-2 text-gray-300 list-disc list-inside">
                     <li>Analyser les données comportementales</li>
@@ -259,7 +259,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      
+
       </main>
 
       {/* Project Modal */}
