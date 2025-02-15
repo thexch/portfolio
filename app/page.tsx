@@ -108,7 +108,7 @@ export default function Home() {
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
                   </svg>
-                  <a href="/path/to/CV.pdf" className="text-white">Mon CV</a>
+                  <a href="/CV.pdf" className="text-white">Mon CV</a>
                 </button>
                 <button className="flex items-center bg-blue-600 text-white px-4 py-2 rounded w-32">
                   <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
