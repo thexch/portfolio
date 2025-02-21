@@ -47,7 +47,7 @@ export default function Home() {
     {
       title: "Brassage d'une baie",
       image: "/images/baie-de-brassage.jpg",
-      description: "BLABLABLABLABLA",
+      description: "Brassage de certaines baies lors du déménagement du siège de la CEBFC dans le nouveau bâtiment à Dijon Valmy.",
       images: ["/images/baie-de-brassage.jpg", "/images/baie-de-brassage.jpg"],
     },
   ];
@@ -97,25 +97,58 @@ export default function Home() {
       <main className="pt-20">
         {/* About Section */}
         <section id="about" className="min-h-screen flex items-center bg-background shadow-lg border-b-4 border-gray-700">
-          <div className="container mx-auto flex items-center">
-            <img src="/images/avatar.png" alt="Avatar" className="w-48 h-48 rounded-full mb-4" /> {/* Agrandir la photo */}
-            <div className="flex flex-col mx-8"> {/* Augmenter la marge */}
-              <p className="text-foreground mb-4 text-lg"> {/* Augmenter la taille du texte */}
-                Je suis un étudiant en BTS SIO passionné par le développement web et logiciel. Bienvenue sur mon portfolio !
-              </p>
-              <div className="flex space-x-4 mt-auto">
-                <button className="flex items-center bg-gray-800 text-white px-4 py-2 rounded w-32">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
-                  </svg>
-                  <a href="/path/to/cv.pdf" className="text-white">Mon CV</a>
-                </button>
-                <button className="flex items-center bg-blue-600 text-white px-4 py-2 rounded w-32">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.38-.02-3.16-1.93-3.16-1.93 0-2.23 1.51-2.23 3.06v5.6h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z" />
-                  </svg>
-                  <a href="https://www.linkedin.com/in/théo-checler-328bb0268/" target="_blank" className="text-white">LinkedIn</a>
-                </button>
+          <div className="container mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Colonne gauche - Photo et info principale */}
+              <div className="text-center md:text-left space-y-6">
+                <div className="relative inline-block">
+                  <img
+                    src="/images/avatar.png"
+                    alt="Avatar"
+                    className="w-64 h-64 rounded-full border-4 border-primary shadow-xl hover:scale-105 transition-transform duration-300 border-yellow-500"
+                  />
+                  
+                </div>
+                <h2 className="text-4xl font-bold text-foreground">Théo CHECLER</h2>
+                <p className="text-xl text-gray-400">Étudiant en alternance - Développeur Junior</p>
+              </div>
+
+              {/* Colonne droite - Description et boutons */}
+              <div className="space-y-8">
+                <div className="bg-gray-800 p-6 rounded-lg shadow-md border-l-4 border-primary border-yellow-500">
+                  <p className="text-foreground text-lg leading-relaxed">
+                    Je suis un étudiant en BTS SIO passionné par le développement web et logiciel.
+                    Actuellement en alternance à la Caisse d'Epargne de Bourgogne Franche Comté, j'aimerais continuer mes études pour aller vers un Bachelor en développement.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Statistiques */}
+                  <div className="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <div className="text-3xl font-bold text-primary">2</div>
+                    <div className="text-sm text-gray-400">Années d&apos;expérience</div>
+                  </div>
+                  <div className="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <div className="text-3xl font-bold text-primary">5+</div>
+                    <div className="text-sm text-gray-400">Projets réalisés</div>
+                  </div>
+                </div>
+
+                {/* Boutons avec hover effects */}
+                <div className="flex space-x-4">
+                  <button className="flex items-center bg-gray-800 text-white px-6 py-3 rounded-lg w-1/2 hover:bg-gray-700 transition-colors group">
+                    <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    <a href="/CV_CHECLER_Théo.pdf" className="text-white">Mon CV</a>
+                  </button>
+                  <button className="flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg w-1/2 hover:bg-blue-700 transition-colors group">
+                    <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.38-.02-3.16-1.93-3.16-1.93 0-2.23 1.51-2.23 3.06v5.6h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z" />
+                    </svg>
+                    <a href="https://www.linkedin.com/in/théo-checler-328bb0268/" target="_blank" className="text-white">LinkedIn</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
