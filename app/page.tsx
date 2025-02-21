@@ -93,7 +93,7 @@ export default function Home() {
           <ul className="flex space-x-6">
             <li><a href="#about" className="hover:text-primary text-foreground">À propos</a></li>
             <li><a href="#projects" className="hover:text-primary text-foreground">Mes projets</a></li>
-            <li><a href="#exp" className="hover:text-primary text-foreground">Expérience professionnels</a></li>
+            <li><a href="#exp" className="hover:text-primary text-foreground">Expériences professionnelles</a></li>
             <li><a href="#tech-watch" className="hover:text-primary text-foreground">Veille technologique</a></li>
           </ul>
         </nav>
