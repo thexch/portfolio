@@ -48,7 +48,13 @@ export default function Home() {
       title: "Brassage d'une baie",
       image: "/images/baie-de-brassage.jpg",
       description: "Brassage de certaines baies lors du déménagement du siège de la CEBFC dans le nouveau bâtiment à Dijon Valmy.",
-      images: ["/images/baie-de-brassage.jpg", "/images/baie-de-brassage.jpg"],
+      images: ["/images/baie-de-brassage.jpg"],
+    },
+    {
+      title: "Création d'une application PowerApps de gestion d'inventaire",
+      image: "/images/powerapps.png",
+      description: "Création d'une application PowerApps pour faciliter la gestion de l'inventaire des équipements informatiques répértioriés sur des Excels.",
+      images: ["/images/powerapps.png"],
     },
   ];
 
