@@ -317,7 +317,7 @@ export default function Home() {
                     <p className="text-foreground mb-2">Dijon Formation, Quetigny</p>
                     <p className="text-gray-300">
                       BTS Services Informatiques aux Organisations option Solutions Logicielles et Applications Métiers.
-                      Formation en alternance à la Caisse d'Epargne de Bourgogne Franche-Comté.
+                      Formation en alternance à la Caisse d&apos;Epargne de Bourgogne Franche-Comté.
                     </p>
                   </div>
                 </div>
