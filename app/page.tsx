@@ -130,10 +130,10 @@ export default function Home() {
       technologies: ["Réseau", "Baie de brassage"],
     },
     {
-      title: "Création d'une application PowerApps de gestion d'inventaire",
+      title: "Création d'une application PowerApps de gestion d'inventaire et des projets",
       image: "/images/powerapps.png",
       description: "Création d'une application PowerApps pour faciliter la gestion de l'inventaire des équipements informatiques répértioriés sur des Excels.",
-      images: ["/images/powerapps.png"],
+      images: ["/images/powerapps2.png", "/images/powerapps.png", "/images/powerapps3.png", "/images/powerapps4.png"],
       technologies: ["PowerApps", "Excel", "SharePoint"],
     },
   ];
@@ -333,12 +333,12 @@ export default function Home() {
                     </div>
                     <p className="text-foreground mb-2">Lycée Carnot, Dijon</p>
                     <p className="text-gray-300">
-                    Baccalauréat Général, spécialité Physique-Chimie / S.V.T et option Mathématiques.
+                      Baccalauréat Général, spécialité Physique-Chimie / S.V.T et option Mathématiques.
                     </p>
                   </div>
                 </div>
+              </div>
             </div>
-          </div>
           </div>
         </section>
 
@@ -510,6 +510,15 @@ export default function Home() {
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              
               <h3 className="text-2xl font-bold mb-4">{selectedProject.title}</h3>
 
               {/* Section technologies */}
@@ -527,7 +536,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4 overflow-y-auto max-h-96"> {/* Utiliser une grille pour les images */}
+              <div className="max-h-[50vh] overflow-y-auto grid grid-cols-2 gap-4 my-4">
                 {selectedProject.images.map((image, index) => (
                   <img
                     key={index}
